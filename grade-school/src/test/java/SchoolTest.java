@@ -16,15 +16,13 @@ public class SchoolTest {
   public void startsWithNoStudents() {
     assertThat(school.db()).isEmpty();
   }
-
-  @Ignore
+  
   @Test
   public void addsStudents() {
     school.add("Aimee", 2);
     assertThat(school.db().get(2)).contains("Aimee");
   }
-
-  @Ignore
+  
   @Test
   public void addsMoreStudentsInSameGrade() {
     final int grade = 2;
@@ -34,8 +32,7 @@ public class SchoolTest {
 
     assertThat(school.db().get(grade)).hasSize(3).contains("James", "Blair", "Paul");
   }
-
-  @Ignore
+  
   @Test
   public void addsStudentsInMultipleGrades() {
     school.add("Chelsea", 3);
@@ -45,8 +42,7 @@ public class SchoolTest {
     assertThat(school.db().get(3)).hasSize(1).contains("Chelsea");
     assertThat(school.db().get(7)).hasSize(1).contains("Logan");
   }
-
-  @Ignore
+  
   @Test
   public void getsStudentsInAGrade() {
     school.add("Franklin", 5);
@@ -55,13 +51,11 @@ public class SchoolTest {
     assertThat(school.grade(5)).hasSize(2).contains("Franklin", "Bradley");
   }
 
-  @Ignore
   @Test
   public void getsStudentsInEmptyGrade() {
     assertThat(school.grade(1)).isEmpty();
   }
 
-  @Ignore
   @Test
   public void sortsSchool() {
     school.add("Jennifer", 4);

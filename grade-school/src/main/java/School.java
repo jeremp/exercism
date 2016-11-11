@@ -38,6 +38,9 @@ class School {
     }
     
     public Map<Integer, List<String>> sort(){
+        for(int grade : map.keySet()){
+            map.get(grade).sort((p1, p2) -> p1.compareTo(p2));
+        }
         return map ;
     }
     
