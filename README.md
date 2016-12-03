@@ -2,5 +2,5 @@
 The exercises i submitted to the **Java** track of http://exercism.io
 
 
-![Logo Exercism](exercismLogo.png)"Logo Exercism")
+![Logo Exercism](exercismLogo.png "Logo Exercism")
 
