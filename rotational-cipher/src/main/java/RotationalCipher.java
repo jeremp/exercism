@@ -48,9 +48,14 @@ class RotationalCipher {
         char[] charArray = a.toCharArray();
         StringBuilder builder = new StringBuilder();
         for(char c : charArray){
-            Character translatedChar = map.get(c);
+            Character translatedChar = map.get(Character.toLowerCase(c));
             if(translatedChar!=null){
-                builder.append(translatedChar);
+                if(Character.isLowerCase(c)){
+                    builder.append(translatedChar);
+                }else{
+                    builder.append(Character.toUpperCase(translatedChar));
+                }
+                
             }else{
                 builder.append(c);
             }

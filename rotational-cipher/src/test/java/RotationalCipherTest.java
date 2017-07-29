@@ -36,35 +36,30 @@ public class RotationalCipherTest {
         Assert.assertEquals("a", rotationalCipher.rotate("n"));
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void rotateCapitalLetters() {
         rotationalCipher = new RotationalCipher(5);
         Assert.assertEquals("TRL", rotationalCipher.rotate("OMG"));
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void rotateSpaces() {
         rotationalCipher = new RotationalCipher(5);
         Assert.assertEquals("T R L", rotationalCipher.rotate("O M G"));
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void rotateNumbers() {
         rotationalCipher = new RotationalCipher(4);
         Assert.assertEquals("Xiwxmrk 1 2 3 xiwxmrk", rotationalCipher.rotate("Testing 1 2 3 testing"));
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void rotatePunctuation() {
         rotationalCipher = new RotationalCipher(21);
         Assert.assertEquals("Gzo'n zvo, Bmviyhv!", rotationalCipher.rotate("Let's eat, Grandma!"));
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void rotateAllLetters() {
         rotationalCipher = new RotationalCipher(13);
