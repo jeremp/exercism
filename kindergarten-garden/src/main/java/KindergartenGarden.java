@@ -2,6 +2,7 @@
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.function.Function;
 import java.util.stream.Collectors;
 
 
@@ -24,9 +25,11 @@ public class KindergartenGarden {
 	public KindergartenGarden(String plants, String[] studentArray) {		
 		String[] rows = plants.split(SPLIT_STR);
 		if(studentArray.length>0){
-			ALPHABET = Arrays.asList(studentArray).stream().sorted().map((t) -> {
-				return t.substring(0, 1);
-			}).collect(Collectors.joining());
+			ALPHABET = Arrays.asList(studentArray)
+					.stream()
+					.sorted()
+					.map(extractFirstLetter())
+					.collect(Collectors.joining());
 		}
 		firstRow = rows[0];
 		secondRow = rows[1];
@@ -45,6 +48,10 @@ public class KindergartenGarden {
 	private int getStudentTurn(String student){
 		String initiale = student.substring(0, 1);
 		return ALPHABET.indexOf(initiale.toUpperCase())*2;
+	}
+	
+	private Function<String,String> extractFirstLetter(){		
+			return t -> t.substring(0, 1);
 	}
 	
 }
